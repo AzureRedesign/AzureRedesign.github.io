@@ -1,2 +1,2 @@
 # AzureRedesign
-A redesign of the Azure site
+A redesign prototype of the Azure site
