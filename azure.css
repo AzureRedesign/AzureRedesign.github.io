@@ -16,13 +16,27 @@ body a:hover {
 
 .subWindow {
   background: #FEFFFE;
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 .wrapperSubWindow:hover {
   background: blue;
 }
 
 .wrapperSubWindow {
+  float: left;
+  margin-left: 10px; 
+  margin-right: 10px; 
 }
+
+.wrapperSubWindow .subWindow {
+  background: #FEFFFE;
+  float: left;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
 .xRemove {
   float: right;
   padding-right: 10px;
