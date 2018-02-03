@@ -34,6 +34,12 @@ function hoverOverSubWindow(evt) {
 function hoverOutSubWindow(evt) {
   let id = evt.target.id;
   // remove element before and unwrap and reallow mouseenter!
+  if (id.substr(id.length - 1) === "t" || id.substr(id.length - 1) === "w") {
+    id = id.substr(0, id.length - 1);
+  }
+  if (id === "") {
+    return;
+  }
   $("#" + id).unwrap();
   $("#" + id + "t").remove();
   $("#" + id).unbind();
