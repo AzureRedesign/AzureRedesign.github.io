@@ -22,6 +22,7 @@ function hoverOverSubWindow(evt) {
   $("#" + id + "w").height(parseFloat(h));
   $("#" + id).unbind();
   $("#" + id + "w").mouseleave(hoverOutSubWindow);
+  $("#" + id + "t").mouseleave(hoverOutSubWindow);
   $("#" + id).before(
     '<div id="' +
       id +
