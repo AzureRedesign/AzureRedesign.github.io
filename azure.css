@@ -1,12 +1,60 @@
 body {
   background:#205B7D;
+  color: #FFFFFF;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+body a {
+  color: #FEFFFE;
+  background:#205B7D;
+  padding: 5px;
 }
 
-subWindow {
+body a:hover {
+  background: #427391;
+}
+
+.subWindow {
   background: #FEFFFE;
 }
+.wrapperSubWindow:hover {
+  background: blue;
+}
 
-menuItem {
+.wrapperSubWindow {
+}
+.xRemove {
+  float: right;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+
+.titleBar {
+  background: #7090FF;
+  color: white;
+  height: 40px;
+}
+.subWindow:hover {
+}
+
+.subWindow a {
+  color: #0057AC;
+}
+
+.menuBar {
+  background: #242524;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+
+}
+
+.menuItem {
   background: #242524;
   color: #ffffff;
 }
+
+.menuitem:hover {
+  background: #3C3D3C;
+}
+
+
