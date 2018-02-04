@@ -1,74 +1,68 @@
 body {
-  background:#205B7D;
-  color: #FFFFFF;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 300;
+    background: #205B7D;
+    color: #FFFFFF;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
 }
+
 body a {
-  color: #FEFFFE;
-  background:#205B7D;
-  padding: 5px;
+    color: #FEFFFE;
+    background: #205B7D;
+    padding: 5px;
 }
 
 body a:hover {
-  background: #427391;
+    background: #427391;
 }
 
 .subWindow {
-  background: #FEFFFE;
-  float: left;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-.wrapperSubWindow:hover {
-  background: blue;
+    background: #FEFFFE;
+    margin-left: 10px;
+    margin-right: 10px;
+    z-index: 0;
 }
 
-.wrapperSubWindow {
-  float: left;
-  margin-left: 10px; 
-  margin-right: 10px; 
+.subWindowWraper {
+    z-index: 100;
+    position: absolute;
+    margin-left: 10px;
+    margin-right: 10px;
+    background: blue;
 }
 
-.wrapperSubWindow .subWindow {
-  background: #FEFFFE;
-  float: left;
-  margin-left: 0px;
-  margin-right: 0px;
+.subWindowInWrapper {
+    background: #FEFFFE;
+    z-index: 0;
+    margin: 0px;
 }
 
 .xRemove {
-  float: right;
-  padding-right: 10px;
-  padding-top: 10px;
+    float: right;
+    padding-right: 10px;
+    padding-top: 10px;
 }
 
 .titleBar {
-  background: #7090FF;
-  color: white;
-  height: 40px;
-}
-.subWindow:hover {
+    background: #7090FF;
+    color: white;
+    height: 40px;
 }
 
 .subWindow a {
-  color: #0057AC;
+    color: #0057AC;
 }
 
 .menuBar {
-  background: #242524;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 400;
-
+    background: #242524;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
 }
 
 .menuItem {
-  background: #242524;
-  color: #ffffff;
+    background: #242524;
+    color: #ffffff;
 }
 
 .menuitem:hover {
-  background: #3C3D3C;
+    background: #3C3D3C;
 }
-
-
