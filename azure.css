@@ -38,15 +38,22 @@ body a:hover {
 
 .xRemove {
     float: right;
-    padding-right: 10px;
-    padding-top: 10px;
+    padding: 5px;
     font-weight: bold;
+    line-height: 20px;
+}
+
+.xRemove:hover {
+    float: right;
+    padding: 5px;
+    font-weight: bold;
+    background: red;
 }
 
 .titleBar {
     background: #7090FF;
     color: white;
-    height: 40px;
+    height: 30px;
 }
 
 .subWindow a {
