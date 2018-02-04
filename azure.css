@@ -36,14 +36,24 @@ body a:hover {
 
 .xRemove {
     float: right;
-    padding: 5px;
+    padding: 0px;
+    margin: 0px;
     font-weight: bold;
-    line-height: 20px;
+    line-height: 30px;
+    vertical-align: middle;
+}
+
+.xRemove img {
+    width: 22px;
+    margin: 0px;
+    padding: 2px;
+    vertical-align: middle;
 }
 
 .xRemove:hover {
     float: right;
-    padding: 5px;
+    padding: 0px;
+    margin: 0px;
     font-weight: bold;
     background: red;
     cursor: pointer;

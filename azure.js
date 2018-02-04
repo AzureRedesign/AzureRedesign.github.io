@@ -27,7 +27,9 @@ function hoverOverSubWindow(evt) {
         $(`#${id}-w`).mouseleave(hoverOutSubWindow);
         // empty div to take spot so other things don't shift around
         $(`#${id}-c`).before(`<div id="${id}-t" class="titleBar"></div>`);
-        $(`#${id}-t`).append(`<div id="${id}-x" class="xRemove">X</div>`);
+        $(`#${id}-t`).append(
+            `<div id="${id}-x" class="xRemove"><img src="close.png" /></div>`
+        );
         $(`#${id}-x`).unbind();
         // $(`#${id}-x`).mouseleave(hoverOutSubWindow);
         $(`#${id}-w`).height(parseFloat(h) + 30);
@@ -40,9 +42,17 @@ function hoverOverSubWindow(evt) {
 }
 
 function removeSubWindow(evt) {
-    let id = evt.target.id;
-    id = id.substr(0, id.length - 2); // root object
+    let id = evt.currentTarget.id;
+    if (
+        id.substr(id.length - 2) === "-t" ||
+        id.substr(id.length - 2) === "-w" ||
+        id.substr(id.length - 2) === "-c" ||
+        id.substr(id.length - 2) === "-x"
+    ) {
+        id = id.substr(0, id.length - 2); // root object
+    }
     $(`#${id}-w`).trigger("mouseout");
+    $(`#${id}-x`).remove();
     $(`#${id}`).remove();
 }
 
@@ -63,7 +73,6 @@ function hoverOutSubWindow(evt) {
     $(`#${id}-t`).remove();
     $(`#${id}-c`).remove();
     $(`#${id}-w`).remove();
-    $(`#${id}-x`).remove();
     $("#" + id).unbind();
     $("#" + id).mouseenter(hoverOverSubWindow);
 }
