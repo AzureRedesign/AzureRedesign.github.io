@@ -14,6 +14,12 @@ function hoverOverSubWindow(evt) {
         $(`#${id}-c`).length === 0 &&
         !(id.substr(id.length - 2) in ["-t", "-w", "-c"])
     ) {
+        $(".subWindow").each(index => {
+            // get out of each other subwindow that's not a match, sometimes this gets missed
+            if (this.id !== id && $(this.id + "-w").length !== 0) {
+                $(this.id + "-w").trigger("mouseout");
+            }
+        });
         let clone = $(`#${id}`).clone();
         clone.attr("id", `${id}-c`);
         clone.css("z-index", 100);
