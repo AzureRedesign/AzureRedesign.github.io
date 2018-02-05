@@ -3,18 +3,53 @@
 
 <head>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="azure.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="azure.css">
+
 </head>
 
 <body>
+    <nav id="nav">
+        <div class='nav-link-brand' href="x"><img class="text-link" src="azure.png" height="60%"><span class="text-link">Microsoft Azure</span></div>
+        <div class='nav-link-user' href="x"><span class="img-user"><i class="fas fa-user-circle fa-2x"></i></span><span class="text-username">someone@cpp.edu<br><span class="text-organization">CAL POLY POMONA</span></span>
+        </div>
+        <div class="nav-link-switch" href="x" id="switch">
+            <div class="form-group text-link">
+                <span class="switch switch-sm">
+              <input type="checkbox" class="switch" id="switch-small">
+              <label for="switch-small" id="switchx">newbie</label>
+                </span>
+            </div>
+        </div>
+        <div class='nav-link' href="x"><span class="text-link"><i class="far fa-question-circle fa-lg"></i></span></div>
+        <div class='nav-link' href="x"><img class="image-link" src="gear.svg" alt="settings" height="45%"></div>
+        <div class='nav-link' href="x"><span class="text-link"><i class="fas fa-terminal"></i></span></div>
+        <div class='nav-link' href="x"><img class="image-link" src="bell.svg" alt="notifications" height="45%"></div>
+        <div class='nav-link' href="x" id="searchIcon"><img class="image-link" src="mag.svg" alt="search" height="45%"></div>
+        <div class='nav-search-bar input-group mb-3' href="x" id="searchBar">
+            <div class="input-group-prepend">
+                <span class="input-group-text search-background-mag" id="magaddon"><img class="image-link" src="mag.svg" alt="search" height="45%"></span>
+            </div>
+            <input type="text" class="form-control search-bar search-background">
+            <div class="input-group-append">
+                <span class="input-group-text search-background-x" id="xaddon">x</span>
+            </div>
+        </div>
+    </nav>
+    <!--     
     <img src="azure.png" width="50px" /> Welcome to the non-affiliated redesign of
     <a href="https://portal.azure.com">Microsoft's Azure</a> interface
     <br>
     <br>
     <div class="subWindow" id="x" style="width: 300px; height: 200px; float: left;"> </div>
-    <div class="subWindow" id="z2" style="width: 450px; height: 350px; float: left;"> </div>
+    <div class="subWindow" id="z2" style="width: 450px; height: 350px; float: left;"> </div> -->
+
+    <!-- jQuery & bootstrap & our script -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script src="azure.js"></script>
 </body>
 
 </html>
