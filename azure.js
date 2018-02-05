@@ -1,32 +1,46 @@
 // jshint esversion: 6
 let searchVisible = false;
+let newbie = true;
+let undoHistory = [];
 
 $(document).ready(function() {
     $(".subWindow").mouseenter(hoverOverSubWindow);
-    $("#searchIcon").on('click', openCloseSearch);
+    $("#searchIcon").on("click", openCloseSearch);
     $("#searchBar").hide();
-    $(window).on('click', openCloseSearch); // THIS IS DANGEROUS! Make sure you read the exception below in !!!!s
+    $(window).on("click", openCloseSearch); // THIS IS DANGEROUS! Make sure you read the exception below in !!!!s
+    $("#switch-small").prop("checked", true);
+    $("#switch-small").on("click", switched);
+    $(".nav-link-brand").on("click", goToHref);
 });
+
+function switched(evt) {
+    newbie = $("#switch-small").prop("checked");
+}
+
+function goToHref(evt) {
+    let target = evt.currentTarget;
+    window.location = target.getAttribute("href");
+}
 
 function openCloseSearch(evt) {
     // !!!!!!!!!!!!!!!!!
     // If you need events to bubble, make sure their ids get added to this array
     // That means you need to get a click or something past this function without it being stopped
     // !!!!!!!!!!!!!!!!!
-    if (!(["switchx", "switch-small", "searchBarInput"].includes(evt.target.id))) {
+    if (!["switchx", "switch-small", "searchBarInput"].includes(evt.target.id)) {
         evt.preventDefault();
         evt.bubbles = false;
         evt.stopPropagation();
     }
-    if (searchVisible && !evt.target.className.includes('search-bar')) {
+    if (searchVisible && !evt.target.className.includes("search-bar")) {
         // hide search
-        $("#searchIcon").show()
-        $("#searchBar").hide()
+        $("#searchIcon").show();
+        $("#searchBar").hide();
         searchVisible = false;
-    } else if (evt.currentTarget.id === 'searchIcon') {
-        $("#searchIcon").hide()
-        $("#searchBar").show()
-        searchVisible = true
+    } else if (evt.currentTarget.id === "searchIcon") {
+        $("#searchIcon").hide();
+        $("#searchBar").show();
+        searchVisible = true;
     }
 }
 
@@ -35,6 +49,10 @@ function hoverOverSubWindow(evt) {
     let w = evt.target.clientWidth;
     let t = evt.target.offsetTop;
     let l = evt.target.offsetLeft;
+    let td = $(".dashboard").offset().top;
+    t += td;
+    let ld = $(".dashboard").offset().left;
+    l += ld;
     let id = evt.target.id;
     if (!(id.substr(id.length - 2) in ["-t", "-w", "-c", "-x"])) {
         $(".subWindow").each(index => {
@@ -83,7 +101,8 @@ function removeSubWindow(evt) {
     }
     $(`#${id}-w`).trigger("mouseout");
     $(`#${id}-x`).remove();
-    $(`#${id}`).remove();
+    $(`#${id}`).hide();
+    undoHistory.push(id);
 }
 
 function hoverOutSubWindow(evt) {
