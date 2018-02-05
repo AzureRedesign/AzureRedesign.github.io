@@ -63,7 +63,7 @@ body a:hover {
 nav {
     height: 5vh;
     min-height: 40px;
-    width: 100vw;
+    width: 100%;
     background: #1b1c1b;
     color: #e7e7e7;
     margin: 0px;
@@ -74,6 +74,7 @@ nav .nav-link {
     position: relative;
     float: right;
     height: 5vh;
+    max-height: 5vh;
     min-height: 40px;
     width: 7vh;
     min-width: 40px;
@@ -82,6 +83,7 @@ nav .nav-link {
     text-align: center;
     background: #1b1c1b;
     border-right: 1px solid gray;
+    cursor: pointer;
 }
 
 nav .nav-search-bar {
@@ -167,6 +169,7 @@ nav .nav-link-brand {
     padding-left: 2px;
     text-align: center;
     background: #1b1c1b;
+    cursor: pointer;
 }
 
 nav .nav-link-switch {
@@ -216,6 +219,7 @@ nav .nav-link-user .text-username {
     float: right;
     margin-top: 0px;
     padding-left: 10px;
+    width: 70%;
     top: 5%;
 }
 
@@ -227,6 +231,12 @@ nav .nav-link-user .text-organization {
     clear: left;
     margin-top: 0px;
     top: 5%;
+}
+
+.scrollable {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    min-width: 1300px;
 }
 
 nav .nav-link-user .img-user {
@@ -243,6 +253,7 @@ nav .nav-link .image-link {
     position: relative;
     margin-top: 0px;
     top: 15%;
+    height: 55%;
 }
 
 nav .nav-link-user {
@@ -250,11 +261,12 @@ nav .nav-link-user {
     float: right;
     height: 5vh;
     min-height: 40px;
-    width: 25vh;
-    min-width: 160px;
+    width: 27vh;
+    min-width: 180px;
     margin: 0px;
     padding: 0px;
     text-align: center;
+    cursor: pointer;
     background: #1b1c1b;
 }
 
@@ -268,10 +280,53 @@ nav .nav-link-user {
     color: #0057ac;
 }
 
+.dashboardHolder {
+    float: left;
+    position: relative;
+    overflow: auto;
+    width: 80vw;
+    height: 80vh;
+}
+
+.dashboardHeader {
+    position: relative;
+    padding-left: 40px;
+    font-size: 20pt;
+    float: left;
+    line-height: 50px;
+}
+
+.dashboardFunction {
+    position: relative;
+    float: left;
+    line-height: 50px;
+    padding-left: 20px;
+    vertical-align: bottom;
+    font-size: 9pt;
+    cursor: pointer;
+}
+
+.exspace {
+    padding-right: 10px;
+}
+
+.dashboard {
+    position: relative;
+    padding: 40px;
+    overflow: scroll;
+    width: 2600px;
+    height: 2600px;
+}
+
 .menuBar {
     background: #242524;
     font-family: "Open Sans", sans-serif;
     font-weight: 400;
+    position: relative;
+    float: left;
+    width: 30vh;
+    min-width: 200px;
+    height: 95vh;
 }
 
 .menuItem {
