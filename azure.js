@@ -1,7 +1,33 @@
 // jshint esversion: 6
+let searchVisible = false;
+
 $(document).ready(function() {
     $(".subWindow").mouseenter(hoverOverSubWindow);
+    $("#searchIcon").on('click', openCloseSearch);
+    $("#searchBar").hide();
+    $(window).on('click', openCloseSearch)
 });
+
+function openCloseSearch(evt) {
+    // !!!!!!!!!!!!!!!!!
+    // If you need events to bubble, make sure their ids get added to this array
+    // !!!!!!!!!!!!!!!!!
+    if (!(evt.target.id in ["switchx", "switch-small"])) {
+        evt.preventDefault();
+        evt.bubbles = false;
+        evt.stopPropagation();
+    }
+    if (searchVisible && !evt.target.className.includes('search-bar')) {
+        // hide search
+        $("#searchIcon").show()
+        $("#searchBar").hide()
+        searchVisible = false;
+    } else if (evt.currentTarget.id === 'searchIcon') {
+        $("#searchIcon").hide()
+        $("#searchBar").show()
+        searchVisible = true
+    }
+}
 
 function hoverOverSubWindow(evt) {
     let h = evt.target.clientHeight;
@@ -33,7 +59,10 @@ function hoverOverSubWindow(evt) {
         $(`#${id}-x`).unbind();
         // $(`#${id}-x`).mouseleave(hoverOutSubWindow);
         $(`#${id}-w`).height(parseFloat(h) + 30);
-        $(`#${id}-w`).offset({ top: parseFloat(t) - 30, left: l });
+        $(`#${id}-w`).offset({
+            top: parseFloat(t) - 30,
+            left: l
+        });
         $(`#${id}-x`).on("click", removeSubWindow);
         $(`#${id}`).unbind();
         $(`#${id}-c`).unbind();
