@@ -5,14 +5,15 @@ $(document).ready(function() {
     $(".subWindow").mouseenter(hoverOverSubWindow);
     $("#searchIcon").on('click', openCloseSearch);
     $("#searchBar").hide();
-    $(window).on('click', openCloseSearch)
+    $(window).on('click', openCloseSearch); // THIS IS DANGEROUS! Make sure you read the exception below in !!!!s
 });
 
 function openCloseSearch(evt) {
     // !!!!!!!!!!!!!!!!!
     // If you need events to bubble, make sure their ids get added to this array
+    // That means you need to get a click or something past this function without it being stopped
     // !!!!!!!!!!!!!!!!!
-    if (!(["switchx", "switch-small"].includes(evt.target.id))) {
+    if (!(["switchx", "switch-small", "searchBarInput"].includes(evt.target.id))) {
         evt.preventDefault();
         evt.bubbles = false;
         evt.stopPropagation();

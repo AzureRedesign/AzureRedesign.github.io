@@ -62,7 +62,7 @@ body a:hover {
 
 nav {
     height: 5vh;
-    min-height: 50px;
+    min-height: 40px;
     width: 100vw;
     background: #1b1c1b;
     color: #e7e7e7;
@@ -73,10 +73,10 @@ nav {
 nav .nav-link {
     position: relative;
     float: right;
-    height: 6vh;
-    min-height: 50px;
+    height: 5vh;
+    min-height: 40px;
     width: 7vh;
-    min-width: 50px;
+    min-width: 40px;
     margin: 0px;
     padding: 0px;
     text-align: center;
@@ -87,8 +87,8 @@ nav .nav-link {
 nav .nav-search-bar {
     position: relative;
     float: right;
-    height: 6vh;
-    min-height: 50px;
+    height: 5vh;
+    min-height: 40px;
     width: 14vh;
     min-width: 250px;
     margin: 0px;
@@ -100,8 +100,8 @@ nav .nav-search-bar {
 }
 
 .search-bar {
-    top: 15%;
-    height: 70%;
+    top: 10%;
+    height: 80%;
     position: relative;
     border: none;
     border-radius: 0px;
@@ -110,8 +110,8 @@ nav .nav-search-bar {
 
 .search-background {
     position: relative;
-    top: 15%;
-    height: 70%;
+    top: 10%;
+    height: 80%;
     background: #434443;
     border: none;
     border-radius: 0px;
@@ -120,10 +120,10 @@ nav .nav-search-bar {
 
 .search-background-mag {
     position: relative;
-    top: 15%;
-    height: 70%;
+    top: 10%;
+    height: 80%;
     background: #434443;
-    width: 20vh;
+    width: 40px;
     min-width: 30px;
     border: none;
     border-radius: 0px;
@@ -132,10 +132,10 @@ nav .nav-search-bar {
 
 .search-background-x {
     position: relative;
-    top: 15%;
-    height: 70%;
+    top: 10%;
+    height: 80%;
     background: #434443;
-    width: 10vh;
+    width: 30px;
     min-width: 15px;
     border: none;
     border-radius: 0px;
@@ -143,8 +143,8 @@ nav .nav-search-bar {
 }
 
 .search-bar:focus {
-    top: 15%;
-    height: 70%;
+    top: 10%;
+    height: 80%;
     position: relative;
     background: #434443;
     border: 1px solid gray;
@@ -158,8 +158,8 @@ nav .nav-link-brand {
     font-size: 14pt;
     position: relative;
     float: left;
-    height: 6vh;
-    min-height: 50px;
+    height: 5vh;
+    min-height: 40px;
     width: 24vh;
     min-width: 175px;
     margin: 0px;
@@ -173,10 +173,10 @@ nav .nav-link-switch {
     color: #FEFEFE;
     position: relative;
     float: right;
-    height: 6vh;
-    min-height: 50px;
-    width: 20vh;
-    min-width: 150px;
+    height: 5vh;
+    min-height: 40px;
+    width: 15vh;
+    min-width: 100px;
     margin: 0px;
     padding: 0px;
     text-align: center;
@@ -199,13 +199,13 @@ nav .nav-link-user .text-link,
 nav .nav-link-switch .text-link {
     position: relative;
     margin-top: 0px;
-    top: 25%;
+    top: 20%;
 }
 
 nav .nav-link-brand .text-link {
     position: relative;
     margin-top: 0px;
-    top: 25%;
+    top: 15%;
     padding-left: 2px;
 }
 
@@ -221,7 +221,8 @@ nav .nav-link-user .text-username {
 
 nav .nav-link-user .text-organization {
     position: relative;
-    font-size: 6pt;
+    font-size: 8pt;
+    font-weight: 400;
     float: right;
     clear: left;
     margin-top: 0px;
@@ -241,14 +242,14 @@ nav .nav-link-user .img-user {
 nav .nav-link .image-link {
     position: relative;
     margin-top: 0px;
-    top: 20%;
+    top: 15%;
 }
 
 nav .nav-link-user {
     position: relative;
     float: right;
-    height: 6vh;
-    min-height: 50px;
+    height: 5vh;
+    min-height: 40px;
     width: 30vh;
     min-width: 180px;
     margin: 0px;
