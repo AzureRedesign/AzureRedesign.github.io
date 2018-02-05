@@ -12,7 +12,7 @@ function openCloseSearch(evt) {
     // !!!!!!!!!!!!!!!!!
     // If you need events to bubble, make sure their ids get added to this array
     // !!!!!!!!!!!!!!!!!
-    if (!(evt.target.id in ["switchx", "switch-small"])) {
+    if (!(["switchx", "switch-small"].includes(evt.target.id))) {
         evt.preventDefault();
         evt.bubbles = false;
         evt.stopPropagation();
