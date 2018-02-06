@@ -1,6 +1,6 @@
 // jshint esversion: 6
 let searchVisible = false;
-let newbie = true;
+let newbie = false;
 let undoHistory = [];
 
 $(document).ready(function() {
@@ -8,13 +8,43 @@ $(document).ready(function() {
     $("#searchIcon").on("click", openCloseSearch);
     $("#searchBar").hide();
     $(window).on("click", openCloseSearch); // THIS IS DANGEROUS! Make sure you read the exception below in !!!!s
-    $("#switch-small").prop("checked", true);
     $("#switch-small").on("click", switched);
+    $("#switch-small").trigger("click");
     $(".nav-link-brand").on("click", goToHref);
+    $("#undo").on("click", undoChange);
 });
 
+function undoChange(evt) {
+    let lastid = undoHistory.pop();
+    $(`#${lastid}`).show();
+}
+
+function showTooltip(evt) {
+    if (newbie) {
+        console.log(newbie);
+        if (evt.target.id !== "") {
+            $(`#${evt.target.id}`).tooltip("show");
+        } else if (evt.currentTarget.id !== "") {
+            $(`#${evt.currentTarget.id}`).tooltip("show");
+        }
+    } else {}
+}
+
+function hideToolTip(id) {
+    console.log("hide");
+}
+
 function switched(evt) {
-    newbie = $("#switch-small").prop("checked");
+    newbie = !newbie;
+
+    if (newbie) {
+        console.log("newbie on");
+        $('[data-toggle="tooltip"]').mouseenter(showTooltip);
+    } else {
+        console.log("newbie off");
+        $('[data-toggle="tooltip"]').unbind();
+        $(".subWindow").mouseenter(hoverOverSubWindow);
+    }
 }
 
 function goToHref(evt) {
@@ -122,6 +152,10 @@ function hoverOutSubWindow(evt) {
     $(`#${id}-t`).remove();
     $(`#${id}-c`).remove();
     $(`#${id}-w`).remove();
-    $("#" + id).unbind();
-    $("#" + id).mouseenter(hoverOverSubWindow);
+    $(`#${id}`).unbind();
+    setTimeout(function() {
+        $(`#${id}`).mouseenter(showTooltip);
+        $(`#${id}`).tooltip("hide");
+        $(`#${id}`).mouseenter(hoverOverSubWindow);
+    }, 400);
 }
