@@ -20,6 +20,8 @@ body a:hover {
     background: #fefffe;
     margin: 5px;
     z-index: 0;
+    color: black;
+    font-weight: 400;
 }
 
 .subWindowWraper {
@@ -33,6 +35,8 @@ body a:hover {
     z-index: 0;
     margin: 0px;
     border: 2px solid #50c0ff;
+    color: black;
+    font-weight: 400;
 }
 
 .xRemove {
@@ -280,17 +284,106 @@ nav .nav-link-user {
     color: #0057ac;
 }
 
-.dashboardHolder {
-    float: left;
-    position: relative;
-    overflow: auto;
-    width: 80vw;
-    height: 80vh;
+.menuAndDashboardHolder {
+    position: absolute;
+    top: 40px;
+    left: 0px;
+    width: 90vw;
+    height: 90vh;
+    overflow: hidden;
+}
+
+@media screen and (min-width: 1200px) {
+    .signifierRightHolder {
+        position: absolute;
+        top: 40px;
+        right: 0px;
+        width: 5vw;
+        height: 95vh;
+        line-height: 95vh;
+        vertical-align: 50%;
+    }
+}
+
+@media screen and (min-width: 800px) and (max-width: 1200px) {
+    .signifierRightHolder {
+        position: absolute;
+        top: 40px;
+        right: 0px;
+        width: 50px;
+        height: 95vh;
+        line-height: 95vh;
+        vertical-align: 50%;
+    }
+}
+
+.signifierBottomHolder {
+    position: absolute;
+    top: 95vh;
+    left: 15vw;
+    width: 100vw;
+    height: 5vh;
+    text-align: center;
+}
+
+@media screen and (min-width: 1200px) {
+    .dashboardHolder {
+        max-width: 80vw;
+        width: 80vw;
+        height: 80vh;
+        position: absolute;
+        top: 50px;
+        left: calc(17vw);
+        overflow: auto;
+    }
+}
+
+@media screen and (min-width: 799px) and (max-width: 1200px) {
+    .dashboardHolder {
+        max-width: 70vw;
+        width: 70vw;
+        height: 80vh;
+        position: absolute;
+        top: 50px;
+        left: calc(22vw);
+        overflow: auto;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .dashboardHeaderHolder {
+        width: 80vw;
+        height: 50px;
+        margin: 0px;
+        position: absolute;
+        top: 0px;
+        left: 17vw;
+        overflow: auto;
+    }
+}
+
+@media screen and (min-width: 800px) and (max-width: 1200px) {
+    .dashboardHeaderHolder {
+        width: 65vw;
+        height: 50px;
+        margin: 0px;
+        position: absolute;
+        top: 0px;
+        left: 22vw;
+        overflow: auto;
+    }
 }
 
 .dashboardHeader {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 2600px;
+    height: 1000px;
+}
+
+.dashboardHeaderWord {
     position: relative;
-    padding-left: 40px;
     font-size: 20pt;
     float: left;
     line-height: 50px;
@@ -311,22 +404,36 @@ nav .nav-link-user {
 }
 
 .dashboard {
-    position: relative;
-    padding: 40px;
-    overflow: scroll;
+    position: absolute;
+    top: 20px;
     width: 2600px;
     height: 2600px;
 }
 
-.menuBar {
-    background: #242524;
-    font-family: "Open Sans", sans-serif;
-    font-weight: 400;
-    position: relative;
-    float: left;
-    width: 30vh;
-    min-width: 200px;
-    height: 95vh;
+@media screen and (min-width: 1200px) {
+    .menuBar {
+        background: #242524;
+        font-family: "Open Sans", sans-serif;
+        font-weight: 400;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 15vw;
+        height: 95vh;
+    }
+}
+
+@media screen and (min-width: 800px) and (max-width: 1200px) {
+    .menuBar {
+        background: #242524;
+        font-family: "Open Sans", sans-serif;
+        font-weight: 400;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 20vw;
+        height: 95vh;
+    }
 }
 
 .menuItem {

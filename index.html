@@ -10,7 +10,7 @@
 
 <body>
     <nav id="nav">
-        <div class='nav-link-brand' href="https://azureredesign.github.io/"><img class="text-link" src="azure.png" height="60%"><span class="text-link">Microsoft Azure</span></div>
+        <div class='nav-link-brand' href="https://azureredesign.github.io/" id="brand" data-toggle="tooltip" data-placement="bottom" data-html="true" title="<em>We are Microsoft Azure. (well not really, but we are copying them to show them how help works)</em> We actually have an icon too! They don't."><img class="text-link" src="azure.png" height="60%"><span class="text-link">Microsoft Azure</span></div>
         <div class='nav-link-user' href="x"><img class="img-user" src="avatar.svg" alt="avatar" height="85%"></span><span class="text-username">someone@cpp.edu<br><span class="text-organization">CAL POLY POMONA</span></span>
         </div>
         <div class="nav-link-switch" href="x" id="switch">
@@ -21,9 +21,10 @@
                 </span>
             </div>
         </div>
-        <div class='nav-link' href="x"><img class="image-link" src="help.svg" alt="help" height="55%" /></div>
-        <div class='nav-link' href="x"><img class="image-link" src="smile.svg" alt="feedback" height="55%"></div>
-        <div class='nav-link' href="x"><img class="image-link" src="gear.svg" alt="settings" height="55%"></div>
+        <div class='nav-link' href="x"><img class="image-link" src="help.svg" alt="help" height="55%" id="help" data-toggle="tooltip" data-placement="bottom" data-html="true" title="<em>Click if you want more information about the services</em> we're always here to help! You can also use the searchbar on the left to look for something specific."
+            /></div>
+        <div class='nav-link' href="x"><img class="image-link" src="smile.svg" alt="feedback" height="55%" id="feedback" data-toggle="tooltip" data-placement="bottom" data-html="true" title="<em>We try to change with good feedback!</em> Tell us whether or not you're satisfied with something on Azure!."></div>
+        <div class='nav-link' href="x"><img class="image-link" src="gear.svg" alt="settings" height="55%" id="settings" data-toggle="tooltip" data-placement="bottom" data-html="true" title="<em>If there's anything positive about Microsoft Azure</em> It's that w're <u>configurable</u>."></div>
         <div class='nav-link' href="x"><span class="text-link"><i class="fas fa-terminal"></i></span></div>
         <div class='nav-link' href="x"><img class="image-link" src="bell.svg" alt="notifications" height="55%"></div>
         <div class='nav-link' href="x" id="searchIcon"><img class="image-link" src="mag.svg" alt="search" height="55%"></div>
@@ -37,21 +38,49 @@
             </div>
         </div>
     </nav>
-    <div class="menuBar">&nbsp;</div>
-    <div class="dashboardHolder">
-        <div class="dashboardHeader">Dashboard</div>
-        <div class="dashboardFunction">
-            <span class="exspace"><i class="fas fa-plus fa-sm"></i></span>new dashboard
+    <div class="menuAndDashboardHolder">
+        <div class="menuBar">&nbsp;</div>
+        <div class="dashboardHeaderHolder" id="dashboardHeader" data-toggle="tooltip" data-placement="bottom" data-html="true" title="<em>These dashboard functions</em> let you make a new dashboard, or clone one and change it and then share that dashboard with someone else. Get one for each service or role and share them with different people. In case you delete your dashboard or a window and you want it back, just hit undo!">
+            <div class="dashboardHeader">
+                <div class="dashboardHeaderWord">Dashboard</div>
+                <div class="dashboardFunction">
+                    <span class="exspace"><i class="fas fa-plus fa-sm"></i></span>New dashboard
+                </div>
+                <div class="dashboardFunction">
+                    <span class="exspace"><img src="edit.svg" width="12px" style="margin: 0px;" alt="edit the dashboard" color: black;
+    font-weight: 400;></span>Edit dashboard
+                </div>
+                <div class="dashboardFunction">
+                    <span class="exspace"><img src="share.svg" width="12px" style="margin: 0px;" alt="share your dashboard"></span>Share dashboard
+                </div>
+                <div class="dashboardFunction">
+                    <span class="exspace"><img src="fullscreen.svg" width="12px" style="margin: 0px;" alt="fullscreen view"></span>Fullscreen
+                </div>
+                <div class="dashboardFunction" id="clonedashboard">
+                    <span class="exspace"><img src="clone.svg" width="12px" style="margin: 0px;" alt="clone dashboard" ></span>Clone dashboard
+                </div>
+                <div class="dashboardFunction">
+                    <span class="exspace"><i class="far fa-trash-alt"></i></span>Delete dashboard
+                </div>
+                <div class="dashboardFunction" id="undo">
+                    <span class="exspace"><i class="fas fa-undo fa-sm"></i></span>Undo change
+                </div>
+            </div>
         </div>
-        <div class="dashboardFunction">
-            <span class="exspace"><i class="fas fa-undo fa-sm"></i></span>undo
+        <div class="dashboardHolder">
+            <div class="dashboard">
+                <div class="subWindow" id="x" style="width: 300px; height: 200px; float: left;" data-toggle="tooltip" data-html="true" title="<em>This window</em> <u>updates you</u> <b>about whether the services you've created are having any trouble.</b> If you delete this window (the x at the top right) you can always undo!"><b>Service Health</b></div>
+                <div class="subWindow" id="z2" style="width: 450px; height: 350px; float: left;" data-toggle="tooltip" data-html="true" title="<em>This window</em> <u>just</u> <b>lets you click on it to go to our store and buy things, it doesn't show anything!</b>">Marketplace</div>
+                <div class="subWindow" id="z3" style="width: 50px; height: 200px; float: left;"> </div>
+                <div class="subWindow" id="z4" style="width: 200px; height: 100px; float: left;"> </div>
+            </div>
         </div>
-        <div class="dashboard">
-            <div class="subWindow" id="x" style="width: 300px; height: 200px; float: left;"> </div>
-            <div class="subWindow" id="z2" style="width: 450px; height: 350px; float: left;"> </div>
-            <div class="subWindow" id="z3" style="width: 50px; height: 200px; float: left;"> </div>
-            <div class="subWindow" id="z4" style="width: 200px; height: 100px; float: left;"> </div>
-        </div>
+    </div>
+    <div class="signifierRightHolder">
+        <i class="fas fa-angle-double-right fa-2x"></i>
+    </div>
+    <div class="signifierBottomHolder">
+        <i class="fas fa-angle-double-down fa-2x"></i>
     </div>
     <!-- jQuery & bootstrap & our script -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
