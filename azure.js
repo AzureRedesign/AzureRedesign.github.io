@@ -4,6 +4,8 @@ let newbie = false;
 let undoHistory = [];
 
 $(document).ready(function() {
+    $(".addsql").on("click", gotoSQL);
+    $(".link").on("click", goToHref);
     $(".subWindow").mouseenter(hoverOverSubWindow);
     $("#searchIcon").on("click", openCloseSearch);
     $("#searchBar").hide();
@@ -17,6 +19,12 @@ $(document).ready(function() {
     $("#selectpricingtier").on("click", pricingWindow);
     $("#pricingwindow").hide();
 });
+
+function gotoSQL(evt) {
+    console.log(window);
+    evt.preventDefault();
+    window.location = "./sql.html";
+}
 
 function pricingWindow(evt) {
     console.log("pricing");
@@ -40,7 +48,6 @@ function undoChange(evt) {
 
 function showTooltip(evt) {
     if (newbie) {
-        console.log(newbie);
         if (evt.target.id !== "") {
             $(`#${evt.target.id}`).tooltip("show");
         } else if (evt.currentTarget.id !== "") {
@@ -67,6 +74,7 @@ function switched(evt) {
 }
 
 function goToHref(evt) {
+    console.log(evt);
     let target = evt.currentTarget;
     window.location = target.getAttribute("href");
 }
@@ -76,7 +84,11 @@ function openCloseSearch(evt) {
     // If you need events to bubble, make sure their ids get added to this array
     // That means you need to get a click or something past this function without it being stopped
     // !!!!!!!!!!!!!!!!!
-    if (!["switchx", "switch-small", "searchBarInput"].includes(evt.target.id)) {
+    if (!["switchx", "switch-small", "searchBarInput", "dashboard"].includes(
+            evt.target.id
+        ) &&
+        evt.target.id !== "addsql"
+    ) {
         evt.preventDefault();
         evt.bubbles = false;
         evt.stopPropagation();
@@ -135,6 +147,9 @@ function hoverOverSubWindow(evt) {
         $(`#${id}`).unbind();
         $(`#${id}-c`).unbind();
         $(`#${id}-t`).unbind();
+        if (id == "z2") {
+            $(".addsql").on("click", gotoSQL);
+        }
     }
 }
 
