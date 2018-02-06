@@ -423,6 +423,20 @@ nav .nav-link-user {
     }
 }
 
+@media screen and (min-width: 1200px) {
+    .menuBar {
+        background: #242524;
+        font-family: "Open Sans", sans-serif;
+        font-weight: 400;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 15vw;
+        height: 95vh;
+    }
+}
+
+/*
 @media screen and (min-width: 800px) and (max-width: 1200px) {
     .menuBar {
         background: #242524;
@@ -435,13 +449,69 @@ nav .nav-link-user {
         height: 95vh;
     }
 }
+*/
+
+.left-menu { 
+	font-family:Calibri;
+	background-color: #242524; 
+	min-width:200px; 
+	float:left; 
+	} 
+
+.menuBar ul { 
+	font-family:Calibri;
+	list-style-type:none; 
+	} 
+
+.menuBar ul li a { 
+	font-family:Calibri;
+	padding:10px 15px; 
+	display:block; 
+	color:#fff; 
+	text-decoration:none; 
+	} 
+
+.menuBar ul li a:hover { 
+	font-family:Calibri;
+	background-color:#007ee9; 
+	}
+
+.menuBar ul li:hover > ul { 
+	font-family:Calibri;
+	left: 200px; 
+	-webkit-transition: left 200ms ease-in; 
+	-moz-transition: left 200ms ease-in; 
+	-ms-transition: left 200ms ease-in; 
+	transition: left 200ms ease-in; 
+	}
+
+.menuBar ul li > ul { 
+	font-family:Calibri;
+	position: absolute; 
+	background-color: #242524; 
+	top: 0; 
+	left: -200px; 
+	min-width: 200px; 
+	z-index: 1; 
+	height: 100%; 
+	-webkit-transition: left 200ms ease-in; 
+	-moz-transition: left 200ms ease-in; 
+	-ms-transition: left 200ms ease-in; 
+	transition: left 200ms ease-in; 
+	} 
+
+.menuBar ul li > ul li a:hover { 
+	font-family:Calibri;
+	background-color:#007ee9; 
+	}
+
 
 .menuItem {
     background: #242524;
     color: #ffffff;
 }
 
-.menuitem:hover {
+.menuItem:hover {
     background: #3c3d3c;
 }
 
