@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="azure.css">
+
+</head>
+
+<body>
+    <nav id="nav">
+        <div class='nav-link-brand' href="https://azureredesign.github.io/" id="brand" data-toggle="tooltip" data-placement="bottom" data-html="true" title="<em>We are Microsoft Azure. (well not really, but we are copying them to show them how help works)</em> We actually have an icon too! They don't."><img class="text-link" src="azure.png" height="60%"><span class="text-link">Microsoft Azure</span></div>
+        <div class='nav-link-user' href="x" id="userinfo"><img class="img-user" src="avatar.svg" alt="avatar" height="85%"></span><span class="text-username">someone@cpp.edu<br><span class="text-organization">CAL POLY POMONA</span></span>
+        </div>
+        <div class="nav-link-switch" href="x" id="switch">
+            <div class="form-group text-link">
+                <span class="switch switch-sm">
+              <input type="checkbox" class="switch" id="switch-small">
+              <label for="switch-small" id="switchx">newbie</label>
+                </span>
+            </div>
+        </div>
+        <div class='nav-link' href="x"><img class="image-link" src="help.svg" alt="help" height="55%" id="help" data-toggle="tooltip" data-placement="bottom" data-html="true" title="<em>Click if you want more information about the services</em> we're always here to help! You can also use the searchbar on the left to look for something specific."
+            /></div>
+        <div class='nav-link' href="x"><img class="image-link" src="smile.svg" alt="feedback" height="55%" id="feedback" data-toggle="tooltip" data-placement="bottom" data-html="true" title="<em>We try to change with good feedback!</em> Tell us whether or not you're satisfied with something on Azure!."></div>
+        <div class='nav-link' href="x"><img class="image-link" src="gear.svg" alt="settings" height="55%" id="settings" data-toggle="tooltip" data-placement="bottom" data-html="true" title="<em>If there's anything positive about Microsoft Azure</em> It's that w're <u>configurable</u>."></div>
+        <div class='nav-link' href="x"><span class="text-link"><i class="fas fa-terminal"></i></span></div>
+        <div class='nav-link' href="x"><img class="image-link" src="bell.svg" alt="notifications" height="55%"></div>
+        <div class='nav-link' href="x" id="searchIcon"><img class="image-link" src="mag.svg" alt="search" height="55%"></div>
+        <div class='nav-search-bar input-group mb-2' href="x" id="searchBar">
+            <div class="input-group-prepend">
+                <span class="input-group-text search-background-mag" id="magaddon"><img class="image-link" src="mag.svg" alt="search" height="80%"></span>
+            </div>
+            <input type="text" class="form-control search-bar search-background" id="searchBarInput">
+            <div class="input-group-append">
+                <span class="input-group-text search-background-x" id="xaddon">x</span>
+            </div>
+        </div>
+    </nav>
+    <div class="menuAndDashboardHolder">
+        <div class="menuBar">&nbsp;</div>
+        <div class="serviceWindows" id="serviceWindows">
+            <div class="serviceWindowHolder">
+                <div class="serviceWindow">
+                    <div class="serviceWindowTitleBar">
+                        <div class="serviceWindowTitleText">
+                            Add New MS SQL Database
+                        </div>
+                        <div class="serviceWindowTitleX">
+                            X
+                        </div>
+                    </div>
+                    * Database name<br>
+                    <input type="text" class="form-control" style="margin-left:10px; width: 85%;" id="databasename" data-toggle="tooltip" data-placement="right" data-html="true" title="<em>When creating a database, it'd be silly not to have a name.</em> So we require one.."
+                    /><br> * Subscription<br>
+                    <select class="selectpicker" style="margin-left:10px;" id="paytype" data-toggle="tooltip" data-placement="right" data-html="true" title="<em>How we bill you.</em> Make sure you know which account this is coming from. Set up different accounts in the billing section on the left menu before you go further if you want!">
+                      <option>Pay-As-You-Go</option>
+                    </select><br><br> * Resource group<br>
+                    <fieldset class="form-group" style="margin-left:10px;">
+                        <div class="form-check" id="newresource" style="clear:none; float: left;">
+                            <label class="form-check-label">
+                              <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                              Create new
+                            </label> &nbsp;&nbsp;&nbsp;
+                            <label class="form-check-label"> &nbsp;
+                            <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+                            Use existing
+                          </label>
+                        </div>
+                    </fieldset>
+                    <input type="text" class="form-control" style="margin-left:10px; width: 85%;" id="resourcegroupname" data-toggle="tooltip" data-placement="right" data-html="true" title="<em>The name for the resource group this will be a part of</em>"><br>                    &ast; Select source<br>
+                    <select class="selectpicker" style="margin-left:10px;" id="databasesource" data-toggle="tooltip" data-placement="right" data-html="true" title="If you're new, it's probably bet to create an empty database, but if you're just testing things out and learning how DBs work, choose one of the samples.">
+                      <option>Blank database</option>
+                      <option>Sample(AdventureWorksLT)</option>
+                    </select><br><br> *Server<br>
+                    <button class="btn btn-info" style="margin-left: 10px;" id="createorselectserver" data-toggle="tooltip" data-placement="right" data-html="true" title="DBs require a server (not a virtual machine but basically an optimized virtual machine that we set up for this purpose)">Create or select server &nbsp;<i class="fas fa-chevron-right"></i></button>
+                    <br><br> Want to use SQL elastic pool?
+                    <fieldset class="form-group" style="margin-left:10px;" id="usepool" data-toggle="tooltip" data-placement="right" data-html="true" title="Using a pool helps you handle a larger load more distributedly, spinning up new servicers and spinning down when not needed. However, it definitely <em style='color:red;'>costs more</em> becaue it requires a base number to be running.">
+                        <div class="form-check" style="clear:none; float: left;">
+                            <label class="form-check-label">
+                              <input type="radio" class="form-check-input" name="pool" id="optionsRadios1" value="option1">
+                              Yes
+                            </label> &nbsp;&nbsp;&nbsp;
+                        </div>
+                        <div class="form-check" style="float:left;">
+                            <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="pool" id="optionsRadios2" value="option2" checked>
+                            Not now
+                          </label>
+                        </div>
+                    </fieldset><br> * Pricing tier<br>
+                    <button class="btn btn-info" style="margin-left: 10px;" id="selectpricingtier" data-toggle="tooltip" data-placement="right" data-html="true" title="Warning! You really have to look into this. Standard S2 is <em style='color:red;'> not the base rate!</em> We just select it because we can and we want to make it quick to set up for enterprises, not the average Joe or Jane!">Standard S2: 50DTU, 250GB<br> <em style='color:red'>Costs: approx $75/mo</em> &nbsp;<i class="fas fa-chevron-right"></i></button>
+                    <br><br> * Collation<br>
+                    <input type="text" class="form-control" style="margin-left: 10px;width: 85%;" id="collation" data-toggle="tooltip" data-placement="right" data-html="true" title="Don't change this unless you know THE specific character format MSSQL uses!" value="SQL_Latin1_General_CP1_CI_AS"
+                    />
+                    <br><br>
+                    <button class="btn btn-danger" style="margin-left:10px;" id="create">Create SQL database!</button>
+                </div>
+                <div class="serviceWindowWide" id="pricingwindow">
+                    <div class="serviceWindowTitleBarWide">
+                        <div class="serviceWindowTitleText">
+                            Select pricing tier!
+                        </div>
+                        <div class="serviceWindowTitleX">
+                            X
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="signifierRightHolder">
+        <i class="fas fa-angle-double-right fa-2x"></i>
+    </div>
+    <div class="signifierBottomHolder">
+        <i class="fas fa-angle-double-down fa-2x"></i>
+    </div>
+    <!-- jQuery & bootstrap & our script -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script src="azure.js"></script>
+</body>
+
+</html>
