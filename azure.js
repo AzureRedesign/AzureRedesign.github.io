@@ -13,7 +13,25 @@ $(document).ready(function() {
     $(".nav-link-brand").on("click", goToHref);
     $("#undo").on("click", undoChange);
     $('[data-toggle="tooltip"]').mouseenter(showTooltip);
+    $(window).resize(resizeWindow);
+    $("#selectpricingtier").on("click", pricingWindow);
+    $("#pricingwindow").hide();
 });
+
+function pricingWindow(evt) {
+    console.log("pricing");
+    $("#pricingwindow").show();
+    $("#selectpricingtier").tooltip("hide");
+    $("#serviceWindows").scrollTop(0);
+}
+
+function resizeWindow(evt) {
+    if ($(window).width() < 1000) {
+        $("#userinfo").hide();
+    } else {
+        $("#userinfo").show();
+    }
+}
 
 function undoChange(evt) {
     let lastid = undoHistory.pop();

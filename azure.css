@@ -22,6 +22,7 @@ body a:hover {
     z-index: 0;
     color: black;
     font-weight: 400;
+    padding: 5px;
 }
 
 .subWindowWraper {
@@ -37,6 +38,7 @@ body a:hover {
     border: 2px solid #50c0ff;
     color: black;
     font-weight: 400;
+    padding: 5px;
 }
 
 .xRemove {
@@ -280,8 +282,81 @@ nav .nav-link-user {
     height: 30px;
 }
 
+.serviceWindows {
+    position: absolute;
+    width: 80vw;
+    height: 95vh;
+    overflow: auto;
+    top: 0px;
+    left: calc(15vw);
+}
+
+.serviceWindowHolder {
+    width: 130vw;
+    height: 200vh;
+    overflow: scroll;
+}
+
+.serviceWindow {
+    position: relative;
+    height: 100%;
+    width: 30vw;
+    background: white;
+    margin-left: 2px;
+    color: #464646;
+    float: left;
+}
+
+.serviceWindowWide {
+    position: relative;
+    height: 100%;
+    width: 40vw;
+    background: white;
+    margin-left: 2px;
+    color: #464646;
+    float: left;
+}
+
+.serviceWindowTitleBarWide {
+    width: 40vw;
+    height: 6vh;
+    margin-left: 2px;
+    margin-top: 2px;
+    background: #1b1b1b;
+    color: white;
+    float: left;
+}
+
+.serviceWindowTitleBar {
+    width: 30vw;
+    height: 6vh;
+    margin-left: 2px;
+    margin-top: 2px;
+    background: #1b1b1b;
+    color: white;
+    float: left;
+}
+
+.serviceWindowTitleText {
+    padding-left: 5px;
+    font-size: 12pt;
+    float: left;
+}
+
+.serviceWindowTitleX {
+    float: right;
+    font-weight: bold;
+    padding-right: 5px;
+}
+
 .subWindow a {
     color: #0057ac;
+    background: #FFffff;
+}
+
+.subWindowInWrapper a {
+    color: #0057ac;
+    background: #FFffff;
 }
 
 .menuAndDashboardHolder {
@@ -436,6 +511,7 @@ nav .nav-link-user {
     }
 }
 
+
 /*
 @media screen and (min-width: 800px) and (max-width: 1200px) {
     .menuBar {
@@ -451,68 +527,67 @@ nav .nav-link-user {
 }
 */
 
-.left-menu { 
-	font-family:Calibri;
-	background-color: #242524; 
-	min-width:200px; 
-	float:left; 
-	} 
-
-.menuBar ul { 
-	font-family:Calibri;
-	list-style-type:none; 
-	} 
-
-.menuBar ul li a { 
-	font-family:Calibri;
-	padding:10px 15px; 
-	display:block; 
-	color:#fff; 
-	text-decoration:none; 
-	} 
-
-.menuBar ul li a:hover { 
-	font-family:Calibri;
-	background-color:#007ee9; 
-	}
-
-.menuBar ul li:hover > ul { 
-	font-family:Calibri;
-	left: 200px; 
-	-webkit-transition: left 200ms ease-in; 
-	-moz-transition: left 200ms ease-in; 
-	-ms-transition: left 200ms ease-in; 
-	transition: left 200ms ease-in; 
-	}
-
-.menuBar ul li > ul { 
-	font-family:Calibri;
-	position: absolute; 
-	background-color: #242524; 
-	top: 0; 
-	left: -200px; 
-	min-width: 200px; 
-	z-index: 1; 
-	height: 100%; 
-	-webkit-transition: left 200ms ease-in; 
-	-moz-transition: left 200ms ease-in; 
-	-ms-transition: left 200ms ease-in; 
-	transition: left 200ms ease-in; 
-	} 
-
-.menuBar ul li > ul li a:hover { 
-	font-family:Calibri;
-	background-color:#007ee9; 
-	}
-
-
-.menuItem {
-    background: #242524;
-    color: #ffffff;
+.left-menu {
+    float: left;
+    margin: 0px;
+    padding-top: 10px;
+    left: 0px;
 }
 
-.menuItem:hover {
-    background: #3c3d3c;
+.menuBar .left-menu a {
+    background: #242524;
+}
+
+.menuBar ul {
+    position: relative;
+    list-style-type: none;
+    float: left;
+    margin-left: 10px;
+    left: -50px;
+}
+
+.menuBar ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 5px 5px 0px 5px;
+    width: 200px;
+}
+
+.menuBar ul li a:hover {
+    background: blue;
+    width: 200px;
+}
+
+.menuBar ul li:hover>ul {
+    background: #242524;
+    opacity: 0.8;
+    left: 200px;
+    width: 200px;
+    display: inline-block;
+    -webkit-transition: left 300ms ease-in;
+    -moz-transition: left 300ms ease-in;
+    -ms-transition: left 300ms ease-in;
+    transition: left 300ms ease-in;
+}
+
+.menuBar ul li>ul {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: -300px;
+    min-width: 250px;
+    width: 200px;
+    z-index: 120;
+    height: 100%;
+    -webkit-transition: left 200ms ease-in;
+    -moz-transition: left 200ms ease-in;
+    -ms-transition: left 200ms ease-in;
+    transition: left 200ms ease-in;
+}
+
+.menuBar ul li>ul li a:hover {
+    width: 200px;
 }
 
 

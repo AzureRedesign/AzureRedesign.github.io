@@ -80,45 +80,79 @@
                 <li><a href="#">Help and Support</a> </li>
             </ul>
         </div>
-        <div class="dashboardHeaderHolder" id="dashboardHeader" data-toggle="tooltip" data-placement="bottom" data-html="true" title="<em>These dashboard functions</em> let you make a new dashboard, or clone one and change it and then share that dashboard with someone else. Get one for each service or role and share them with different people. In case you delete your dashboard or a window and you want it back, just hit undo!">
-            <div class="dashboardHeader">
-                <div class="dashboardHeaderWord">Dashboard</div>
-                <div class="dashboardFunction">
-                    <span class="exspace"><i class="fas fa-plus fa-sm"></i></span>New dashboard
+
+        <div class="serviceWindows" id="serviceWindows">
+            <div class="serviceWindowHolder">
+                <div class="serviceWindow">
+                    <div class="serviceWindowTitleBar">
+                        <div class="serviceWindowTitleText">
+                            Add New MS SQL Database
+                        </div>
+                        <div class="serviceWindowTitleX">
+                            X
+                        </div>
+                    </div>
+                    * Database name<br>
+                    <input type="text" class="form-control" style="margin-left:10px; width: 85%;" id="databasename" data-toggle="tooltip" data-placement="right" data-html="true" title="<em>When creating a database, it'd be silly not to have a name.</em> So we require one.."
+                    /><br> * Subscription<br>
+                    <select class="selectpicker" style="margin-left:10px;" id="paytype" data-toggle="tooltip" data-placement="right" data-html="true" title="<em>How we bill you.</em> Make sure you know which account this is coming from. Set up different accounts in the billing section on the left menu before you go further if you want!">
+                      <option>Pay-As-You-Go</option>
+                    </select><br><br> * Resource group<br>
+                    <fieldset class="form-group" style="margin-left:10px;">
+                        <div class="form-check" id="newresource" style="clear:none; float: left;">
+                            <label class="form-check-label">
+                              <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                              Create new
+                            </label> &nbsp;&nbsp;&nbsp;
+                            <label class="form-check-label"> &nbsp;
+                            <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+                            Use existing
+                          </label>
+                        </div>
+                    </fieldset>
+                    <input type="text" class="form-control" style="margin-left:10px; width: 85%;" id="resourcegroupname" data-toggle="tooltip" data-placement="right" data-html="true" title="<em>The name for the resource group this will be a part of</em>"><br>                    &ast; Select source<br>
+                    <select class="selectpicker" style="margin-left:10px;" id="databasesource" data-toggle="tooltip" data-placement="right" data-html="true" title="If you're new, it's probably bet to create an empty database, but if you're just testing things out and learning how DBs work, choose one of the samples.">
+                      <option>Blank database</option>
+                      <option>Sample(AdventureWorksLT)</option>
+                    </select><br><br> *Server<br>
+                    <button class="btn btn-info" style="margin-left: 10px;" id="createorselectserver" data-toggle="tooltip" data-placement="right" data-html="true" title="DBs require a server (not a virtual machine but basically an optimized virtual machine that we set up for this purpose)">Create or select server &nbsp;<i class="fas fa-chevron-right"></i></button>
+                    <br><br> Want to use SQL elastic pool?
+                    <fieldset class="form-group" style="margin-left:10px;" id="usepool" data-toggle="tooltip" data-placement="right" data-html="true" title="Using a pool helps you handle a larger load more distributedly, spinning up new servicers and spinning down when not needed. However, it definitely <em style='color:red;'>costs more</em> becaue it requires a base number to be running.">
+                        <div class="form-check" style="clear:none; float: left;">
+                            <label class="form-check-label">
+                              <input type="radio" class="form-check-input" name="pool" id="optionsRadios1" value="option1">
+                              Yes
+                            </label> &nbsp;&nbsp;&nbsp;
+                        </div>
+                        <div class="form-check" style="float:left;">
+                            <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="pool" id="optionsRadios2" value="option2" checked>
+                            Not now
+                          </label>
+                        </div>
+                    </fieldset><br> * Pricing tier<br>
+                    <button class="btn btn-info" style="margin-left: 10px;" id="selectpricingtier" data-toggle="tooltip" data-placement="right" data-html="true" title="Warning! You really have to look into this. Standard S2 is <em style='color:red;'> not the base rate!</em> We just select it because we can and we want to make it quick to set up for enterprises, not the average Joe or Jane!">Standard S2: 50DTU, 250GB<br> <em style='color:red'>Costs: approx $75/mo</em> &nbsp;<i class="fas fa-chevron-right"></i></button>
+                    <br><br> * Collation<br>
+                    <input type="text" class="form-control" style="margin-left: 10px;width: 85%;" id="collation" data-toggle="tooltip" data-placement="right" data-html="true" title="Don't change this unless you know THE specific character format MSSQL uses!" value="SQL_Latin1_General_CP1_CI_AS"
+                    />
+                    <br><br>
+                    <button class="btn btn-danger" style="margin-left:10px;" id="create">Create SQL database!</button>
                 </div>
-                <div class="dashboardFunction">
-                    <span class="exspace"><img src="edit.svg" width="12px" style="margin: 0px;" alt="edit the dashboard" color: black;
-    font-weight: 400;></span>Edit dashboard
-                </div>
-                <div class="dashboardFunction">
-                    <span class="exspace"><img src="share.svg" width="12px" style="margin: 0px;" alt="share your dashboard"></span>Share dashboard
-                </div>
-                <div class="dashboardFunction">
-                    <span class="exspace"><img src="fullscreen.svg" width="12px" style="margin: 0px;" alt="fullscreen view"></span>Fullscreen
-                </div>
-                <div class="dashboardFunction" id="clonedashboard">
-                    <span class="exspace"><img src="clone.svg" width="12px" style="margin: 0px;" alt="clone dashboard" ></span>Clone dashboard
-                </div>
-                <div class="dashboardFunction">
-                    <span class="exspace"><i class="far fa-trash-alt"></i></span>Delete dashboard
-                </div>
-                <div class="dashboardFunction" id="undo">
-                    <span class="exspace"><i class="fas fa-undo fa-sm"></i></span>Undo change
+                <div class="serviceWindowWide" id="pricingwindow">
+                    <div class="serviceWindowTitleBarWide">
+                        <div class="serviceWindowTitleText">
+                            Select pricing tier!
+                        </div>
+                        <div class="serviceWindowTitleX">
+                            X
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="dashboardHolder">
-            <div class="dashboard">
-                <div class="subWindow" id="x" style="width: 300px; height: 200px; float: left;" data-toggle="tooltip" data-html="true" title="<em>This window</em> <u>updates you</u> <b>about whether the services you've created are having any trouble.</b> If you delete this window (the x at the top right) you can always undo!"><b>Service Health</b></div>
-                <div class="subWindow" id="z2" style="width: 450px; height: 350px; float: left;" data-toggle="tooltip" data-html="true" title="<em>This window shows you and lets you</em> <u>ADD</u> <b> new Microsoft! only SQL DBs!</b>">SQL Databases
-                    <br><br><br><a href="./sql.html" class="btn btn-danger"> Add Microsoft SQL Database</a>
-                </div>
-                <div class="subWindow" id="z3" style="width: 50px; height: 200px; float: left;"> </div>
-                <div class="subWindow" id="z4" style="width: 200px; height: 100px; float: left;" data-toggle="tooltip" data-html="true" title="<em>This window</em> <u>just</u> <b>lets you click on it to go to our store and buy things, it doesn't show anything!</b>">
-                    Marketplace</div>
-            </div>
+
         </div>
     </div>
+
     <div class="signifierRightHolder">
         <i class="fas fa-angle-double-right fa-2x"></i>
     </div>
