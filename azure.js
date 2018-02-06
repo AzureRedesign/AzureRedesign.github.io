@@ -12,6 +12,7 @@ $(document).ready(function() {
     $("#switch-small").trigger("click");
     $(".nav-link-brand").on("click", goToHref);
     $("#undo").on("click", undoChange);
+    $('[data-toggle="tooltip"]').mouseenter(showTooltip);
 });
 
 function undoChange(evt) {
@@ -39,10 +40,10 @@ function switched(evt) {
 
     if (newbie) {
         console.log("newbie on");
-        $('[data-toggle="tooltip"]').mouseenter(showTooltip);
+        $('[data-toggle="tooltip"]').bind("mouseenter", showTooltip);
     } else {
         console.log("newbie off");
-        $('[data-toggle="tooltip"]').unbind();
+        $('[data-toggle="tooltip"]').unbind("mouseenter");
         $(".subWindow").mouseenter(hoverOverSubWindow);
     }
 }
