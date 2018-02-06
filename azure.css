@@ -302,7 +302,7 @@ nav .nav-link-user {
     height: 100%;
     width: 30vw;
     background: white;
-    margin-left: 2px;
+    margin-left: 10px;
     color: #464646;
     float: left;
 }
@@ -320,8 +320,6 @@ nav .nav-link-user {
 .serviceWindowTitleBarWide {
     width: 40vw;
     height: 6vh;
-    margin-left: 2px;
-    margin-top: 2px;
     background: #1b1b1b;
     color: white;
     float: left;
@@ -330,8 +328,6 @@ nav .nav-link-user {
 .serviceWindowTitleBar {
     width: 30vw;
     height: 6vh;
-    margin-left: 2px;
-    margin-top: 2px;
     background: #1b1b1b;
     color: white;
     float: left;
@@ -511,9 +507,7 @@ nav .nav-link-user {
     }
 }
 
-
-/*
-@media screen and (min-width: 800px) and (max-width: 1200px) {
+@media screen and (max-width: 1200px) {
     .menuBar {
         background: #242524;
         font-family: "Open Sans", sans-serif;
@@ -522,28 +516,29 @@ nav .nav-link-user {
         top: 0px;
         left: 0px;
         width: 20vw;
-        height: 95vh;
+        height: 100vh;
     }
 }
-*/
 
 .left-menu {
     float: left;
     margin: 0px;
     padding-top: 10px;
     left: 0px;
+    width: 15vw;
 }
 
 .menuBar .left-menu a {
     background: #242524;
+    width: 15vw;
 }
 
 .menuBar ul {
     position: relative;
     list-style-type: none;
     float: left;
-    margin-left: 10px;
-    left: -50px;
+    left: -40px;
+    width: 15vw;
 }
 
 .menuBar ul li a {
@@ -551,19 +546,19 @@ nav .nav-link-user {
     text-decoration: none;
     display: block;
     padding: 5px 5px 0px 5px;
-    width: 200px;
+    width: 15vw;
 }
 
 .menuBar ul li a:hover {
     background: blue;
-    width: 200px;
+    width: 15vw;
 }
 
 .menuBar ul li:hover>ul {
     background: #242524;
     opacity: 0.8;
-    left: 200px;
-    width: 200px;
+    left: 15vw;
+    width: 15vw;
     display: inline-block;
     -webkit-transition: left 300ms ease-in;
     -moz-transition: left 300ms ease-in;
@@ -575,11 +570,9 @@ nav .nav-link-user {
     display: inline-block;
     position: absolute;
     top: 0;
-    left: -300px;
-    min-width: 250px;
-    width: 200px;
+    left: -20vw;
+    width: 15vw;
     z-index: 120;
-    height: 100%;
     -webkit-transition: left 200ms ease-in;
     -moz-transition: left 200ms ease-in;
     -ms-transition: left 200ms ease-in;
@@ -587,7 +580,7 @@ nav .nav-link-user {
 }
 
 .menuBar ul li>ul li a:hover {
-    width: 200px;
+    width: 15vw;
 }
 
 
