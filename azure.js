@@ -2,6 +2,9 @@
 let searchVisible = false;
 let newbie = false;
 let undoHistory = [];
+let tiercost = 30;
+let tierDTU = 20;
+let tierStorage = 250;
 
 $(document).ready(function() {
     $(".addsql").on("click", gotoSQL);
@@ -18,7 +21,119 @@ $(document).ready(function() {
     $(window).resize(resizeWindow);
     $("#selectpricingtier").on("click", pricingWindow);
     $("#pricingwindow").hide();
+    $("#basics1").on("click", chooseTier);
+    $("#standards2").on("click", chooseTier);
+    $("#premium").on("click", chooseTier);
+    $("#premiumrs").on("click", chooseTier);
+    $("[name=choosetier]").on("click", chooseTier);
+    $("#standards2").trigger("click");
 });
+
+function chooseTier(evt) {
+    console.log(evt);
+    if (evt.target.id == "basics1") {
+        $("#tiername").html("Basic S1");
+        $("#tiercontent").html("This tier costs:" + tiercost + " per month");
+        $("#basics1").removeClass("btn-info");
+        $("#basics1").addClass("btn-primary");
+        $("#standards2").removeClass("btn-primary");
+        $("#standards2").addClass("btn-info");
+        $("#premium").removeClass("btn-primary");
+        $("#premium").addClass("btn-info");
+        $("#premiumrs").removeClass("btn-primary");
+        $("#premiumrs").addClass("btn-info");
+        tierDTU = 5;
+        tierStorage = 2;
+        $("#sliderDTU").slider({
+            min: 5,
+            max: 5,
+            range: "min",
+            value: tierDTU
+        });
+        $("#sliderStorage").slider({
+            min: 0.1,
+            max: 2,
+            range: "min",
+            value: tierStorage
+        });
+    } else if (evt.target.id == "standards2") {
+        $("#tiername").html("Standard S0-1");
+        $("#basics1").removeClass("btn-primary");
+        $("#basics1").addClass("btn-info");
+        $("#standards2").removeClass("btn-info");
+        $("#standards2").addClass("btn-primary");
+        $("#standards3").removeClass("btn-primary");
+        $("#standards3").addClass("btn-info");
+        $("#premium").removeClass("btn-primary");
+        $("#premium").addClass("btn-info");
+        $("#premiumrs").removeClass("btn-primary");
+        $("#premiumrs").addClass("btn-info");
+        $("#selectDTU").html(
+            "<option value=10>10</option><option value=20 selected>20</option>"
+        );
+        $("#selectStorage").html(
+            "<option value='0.1'>100MB</option><option value='0.5'>500MB</option><option value='1'>1GB</option><option value='2'>2GB</option><option value='5'>5GB</option><option value='10'>10GB</option><option value='20'>20</option><option value='30'>30</option><option value='40'>40</option><option value='50'>50</option><option value='100'>100</option><option value='150'>150</option><option value='200'>200</option><option value='250' selected>250</option>"
+        );
+        $("#tiercontent").html(
+            "This tier costs: <em style='color: red; font-weight: bold;'>" +
+            tiercost * 1.0 +
+            "</em> per month<br> and has " +
+            $("#selectDTU")[0].value +
+            "DTUs and<br> " +
+            $("#selectStorage")[0].value +
+            "GB storage!"
+        );
+        baseRate = 15.0;
+        let select = $("#selectDTU");
+        $("#sliderDTU").unbind();
+        let slider = $("#sliderDTU").slider({
+            min: 1,
+            max: 2,
+            range: "min",
+            value: select[0].selectedIndex + 1,
+            slide: function(event, ui) {
+                select[0].selectedIndex = ui.value - 1;
+                tiercost = baseRate * (parseFloat(select[0].selectedIndex) + 1);
+                $("#tiercontent").html(
+                    "This tier costs: <em style='color: red; font-weight: bold;'>" +
+                    tiercost * 1.0 +
+                    "</em> per month<br> and has " +
+                    $("#selectDTU")[0].value +
+                    "DTUs and<br> " +
+                    $("#selectStorage")[0].value +
+                    "GB storage!"
+                );
+            }
+        });
+        $("#selectDTU").unbind();
+        $("#selectDTU").bind("change", function() {
+            slider.slider("value", this.selectedIndex + 1);
+        });
+        select = $("#selectStorage");
+        slider = $("#sliderStorage").slider({
+            min: 1,
+            max: 14,
+            range: "min",
+            value: select[0].selectedIndex + 1,
+            slide: function(event, ui) {
+                select[0].selectedIndex = ui.value - 1;
+                $("#tiercontent").html(
+                    "This tier costs: <em style='color: red; font-weight: bold;'>" +
+                    tiercost * 1.0 +
+                    "</em> per month<br> and has " +
+                    $("#selectDTU")[0].value +
+                    "DTUs and<br> " +
+                    $("#selectStorage")[0].value +
+                    "GB storage!"
+                );
+            }
+        });
+        $("#selectStorage").unbind();
+        $("#selectStorage").bind("change", function() {
+            slider.slider("value", this.selectedIndex + 1);
+        });
+    }
+}
 
 function gotoSQL(evt) {
     console.log(window);
