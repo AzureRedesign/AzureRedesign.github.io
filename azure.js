@@ -108,6 +108,16 @@ function chooseTier(evt) {
         $("#selectDTU").unbind();
         $("#selectDTU").bind("change", function() {
             slider.slider("value", this.selectedIndex + 1);
+            $("#tiercontent").html(
+                "This tier costs: <em style='color: red; font-weight: bold;'>" +
+                tiercost * 1.0 +
+                "</em> per month<br> and has " +
+                $("#selectDTU")[0].value +
+                "DTUs and<br> " +
+                $("#selectStorage")[0].value +
+                "GB storage!"
+            );
+            tiercost = baseRate * (parseFloat(select[0].selectedIndex) + 1);
         });
         select = $("#selectStorage");
         slider = $("#sliderStorage").slider({
@@ -130,7 +140,16 @@ function chooseTier(evt) {
         });
         $("#selectStorage").unbind();
         $("#selectStorage").bind("change", function() {
-            slider.slider("value", this.selectedIndex + 1);
+            $("#selectSlider").slider("value", this.selectedIndex + 1);
+            $("#tiercontent").html(
+                "This tier costs: <em style='color: red; font-weight: bold;'>" +
+                tiercost * 1.0 +
+                "</em> per month<br> and has " +
+                $("#selectDTU")[0].value +
+                "DTUs and<br> " +
+                $("#selectStorage")[0].value +
+                "GB storage!"
+            );
         });
     }
 }
