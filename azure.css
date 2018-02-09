@@ -4,6 +4,7 @@ body {
     font-family: "Open Sans", sans-serif;
     font-weight: 300;
     margin: 0px;
+    min-width: 800px;
 }
 
 body a {
@@ -69,6 +70,7 @@ body a:hover {
 nav {
     height: 5vh;
     min-height: 40px;
+    min-width: 800px;
     width: 100%;
     background: #1b1c1b;
     color: #e7e7e7;
@@ -701,4 +703,31 @@ nav .nav-link-user {
     clear: none;
     float: right;
     font-size: 5pt;
+}
+
+.choosetier {
+    padding: 5px;
+    position: relative;
+}
+
+.tierselected {
+    padding: 5px;
+    position: relative;
+    height: 40vh
+}
+
+.tiername {
+    height: 10vh;
+}
+
+.tiercontent {
+    height: 30vh;
+    background: gray;
+}
+
+.apply {
+    padding: 5px;
+    position: absolute;
+    top: 80vh;
+    left: 0px;
 }
