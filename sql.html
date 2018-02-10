@@ -83,6 +83,23 @@
         </div>
 
         <div class="serviceWindows" id="serviceWindows">
+            <div class="modal fade" id="modalConfirmation">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" style="color: black;">Your confirmation cost breakdown!</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                        </div>
+                        <div class="modal-body" id="modalbody">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary link" data-dismiss="modal" href="https://AzureRedesign.github.io">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="serviceWindowHolder">
                 <div class="serviceWindow">
                     <div class="serviceWindowTitleBar">
@@ -132,7 +149,7 @@
                           </label>
                         </div>
                     </fieldset><br> * Pricing tier<br>
-                    <button class="btn btn-info" style="margin-left: 10px;" id="selectpricingtier" data-toggle="tooltip" data-placement="right" data-html="true" title="Warning! You really have to look into this. Standard S2 is <em style='color:red;'> not the base rate!</em> We just select it because we can and we want to make it quick to set up for enterprises, not the average Joe or Jane!">Standard S2: 50DTU, 250GB<br> <em style='color:red'>Costs: approx $75/mo</em> &nbsp;<i class="fas fa-chevron-right"></i></button>
+                    <button class="btn btn-info" style="margin-left: 10px;" id="selectpricingtier" data-toggle="tooltip" data-placement="right" data-html="true" title="Warning! You really have to look into this. Standard S2 is <em style='color:red;'> not the base rate!</em> We just select it because we can and we want to make it quick to set up for enterprises, not the average Joe or Jane!">Standard S2: 50DTU, 250GB<br> <em style='color:red'>Costs: approx $30/mo</em> &nbsp;<i class="fas fa-chevron-right"></i></button>
                     <br><br> * Collation<br>
                     <input type="text" class="form-control" style="margin-left: 10px;width: 85%;" id="collation" data-toggle="tooltip" data-placement="right" data-html="true" title="Don't change this unless you know THE specific character format MSSQL uses!" value="SQL_Latin1_General_CP1_CI_AS"
                     />
