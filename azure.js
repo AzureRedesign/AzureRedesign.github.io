@@ -27,7 +27,19 @@ $(document).ready(function() {
     $("#premiumrs").on("click", chooseTier);
     $("[name=choosetier]").on("click", chooseTier);
     $("#standards2").trigger("click");
+    $("#create").on("click", showCreateModal);
 });
+
+function showCreateModal(evt) {
+    console.log(evt);
+    $("#modalbody").html(
+        "<p style='color:red; font-weight: bolder;'><em>Cost:" +
+        tiercost * 1.0 +
+        "</em></p>" +
+        "<p style='color:black; font-weight: normal;'>You will now be billed monthly and you can check the status of your service in the All Resources tile (you can add that in the dashboard editing mode)</p>"
+    );
+    $("#modalConfirmation").modal("show");
+}
 
 function chooseTier(evt) {
     console.log(evt);
@@ -108,6 +120,16 @@ function chooseTier(evt) {
         $("#selectDTU").unbind();
         $("#selectDTU").bind("change", function() {
             slider.slider("value", this.selectedIndex + 1);
+            $("#tiercontent").html(
+                "This tier costs: <em style='color: red; font-weight: bold;'>" +
+                tiercost * 1.0 +
+                "</em> per month<br> and has " +
+                $("#selectDTU")[0].value +
+                "DTUs and<br> " +
+                $("#selectStorage")[0].value +
+                "GB storage!"
+            );
+            tiercost = baseRate * (parseFloat(select[0].selectedIndex) + 1);
         });
         select = $("#selectStorage");
         slider = $("#sliderStorage").slider({
@@ -130,7 +152,16 @@ function chooseTier(evt) {
         });
         $("#selectStorage").unbind();
         $("#selectStorage").bind("change", function() {
-            slider.slider("value", this.selectedIndex + 1);
+            $("#selectSlider").slider("value", this.selectedIndex + 1);
+            $("#tiercontent").html(
+                "This tier costs: <em style='color: red; font-weight: bold;'>" +
+                tiercost * 1.0 +
+                "</em> per month<br> and has " +
+                $("#selectDTU")[0].value +
+                "DTUs and<br> " +
+                $("#selectStorage")[0].value +
+                "GB storage!"
+            );
         });
     }
 }
