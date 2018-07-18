@@ -486,105 +486,79 @@ nav .nav-link-user {
 @media screen and (min-width: 1200px) {
     .menuBar {
         background: #242524;
-        font-family: "Open Sans", sans-serif;
-        font-weight: 400;
+        padding: 0;
+        margin: 0; 
+        font-family: Calibri;
+        z-index: 3; 
         position: absolute;
-        top: 0px;
-        left: 0px;
+        top: 50px;
+        left: -40px;
         width: 15vw;
         height: 95vh;
     }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 800px) and (max-width: 1200px) {
     .menuBar {
         background: #242524;
-        font-family: "Open Sans", sans-serif;
-        font-weight: 400;
+        padding: 0;
+        margin: 0; 
+        font-family: Calibri;
+        z-index: 3; 
         position: absolute;
-        top: 0px;
-        left: 0px;
+        top: 50px;
+        left: -40px;
         width: 15vw;
         height: 95vh;
     }
 }
 
-@media screen and (max-width: 1200px) {
-    .menuBar {
-        background: #242524;
-        font-family: "Open Sans", sans-serif;
-        font-weight: 400;
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        width: 20vw;
-        height: 100vh;
-    }
-}
+.left-menu { 
+    background-color: #242524; 
+    min-width: 300px;
+    float: left; 
+    } 
 
-.left-menu {
-    float: left;
-    margin: 0px;
-    padding-top: 10px;
-    left: 0px;
-    width: 15vw;
-}
+.menuBar ul { 
+    list-style-type:none; 
+    } 
 
-.menuBar .left-menu a {
-    background: #242524;
-    width: 15vw;
-}
 
-.menuBar ul {
-    position: relative;
-    list-style-type: none;
-    float: left;
-    left: -40px;
-    width: 15vw;
-}
+.menuBar ul li a { 
+    padding: 10px 15px; 
+    display: block; 
+    color: #fff; 
+    text-decoration:none; 
+    } 
 
-.menuBar ul li a {
-    color: #fff;
-    text-decoration: none;
-    display: block;
-    padding: 5px 5px 0px 5px;
-    width: 15vw;
-}
 
 .menuBar ul li a:hover {
-    background: blue;
-    width: 15vw;
-}
+    background-color:#007ee9; 
+    }
 
-.menuBar ul li:hover>ul {
-    background: #242524;
-    opacity: 0.8;
-    left: 15vw;
-    width: 15vw;
-    display: inline-block;
-    -webkit-transition: left 300ms ease-in;
-    -moz-transition: left 300ms ease-in;
-    -ms-transition: left 300ms ease-in;
-    transition: left 300ms ease-in;
-}
 
-.menuBar ul li>ul {
-    display: inline-block;
+.menuBar ul li:hover > ul { 
+    left: 300px; 
+    -webkit-transition: 300ms ease-in; 
+    -moz-transition: 300ms ease-in; 
+    -o-transition: 300ms ease-in; 
+    transition: 300ms ease-in; 
+    }
+
+
+.menuBar ul li > ul { 
     position: absolute;
-    top: 0;
-    left: -20vw;
-    width: 15vw;
-    z-index: 120;
-    -webkit-transition: left 200ms ease-in;
-    -moz-transition: left 200ms ease-in;
-    -ms-transition: left 200ms ease-in;
-    transition: left 200ms ease-in;
-}
-
-.menuBar ul li>ul li a:hover {
-    width: 15vw;
-}
-
+    background-color: #242524; 
+    top: 0px; 
+    left: -300px; 
+    min-width: 300px;
+    z-index: 1000; 
+    height: 100%; 
+    -webkit-transition: 300ms ease-in; 
+    -moz-transition: 300ms ease-in; 
+    -o-transition: 300ms ease-in; 
+    transition: 300ms ease-in; 
+    }
 
 /* Stolen from https://codepen.io/claviska/pen/KyWmjY */
 
